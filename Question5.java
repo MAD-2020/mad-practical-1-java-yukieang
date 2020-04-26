@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Question5
 {
@@ -28,5 +29,34 @@ public class Question5
      
     Scanner in = new Scanner(System.in);
     
+    ArrayList<Integer> integerlist = new ArrayList<Integer>();
+    
+    int mode = 0;
+    /*System.out.print("Enter integer: ")*/
+    int input = in.nextInt();
+    
+    for (int i = 0; i < input; i++)
+    {
+      int intinput = in.nextInt();
+      integerlist.add(intinput);
+    }
+    
+    int max = 0;
+    for (int j = 0; j < integerlist.size(); j++)
+    {
+      int x = integerlist.get(0);
+      int count = 0;
+      
+      for (int k = 0; k < integerlist.size(); k++)
+      {
+        if (integerlist.get(k) == x) count++;
+        if (count > max)
+        {
+          mode = x;
+          max = count;
+        }
+      }
+    }
+    System.out.println(mode);
   }
 }
